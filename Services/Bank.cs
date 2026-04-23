@@ -1,3 +1,4 @@
+using System.Linq;
 using BankApp.Models;
 
 namespace BankApp.Services
@@ -32,5 +33,9 @@ namespace BankApp.Services
                 account.DisplayInfo();
             }
         }
+        public BankAccount? FindAccountByNumber(string accountNumber)
+{
+    return _accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+}
     }
 }
